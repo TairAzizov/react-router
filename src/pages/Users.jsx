@@ -29,12 +29,16 @@ const Users = () => {
     <div className="container">
         <div className="box">
             {users ? users.map((user) => (
+            <Link to={`/users/${user.id}`} className="item" key={user.id}>
+
+
                 <div className="item" key={user.id}>
                     <h2>{user.name}</h2>
                     <h3>{user.email}</h3>
                     <h3>{user.username}</h3>
                     <h3>{user.phone}</h3>
                 </div>
+                </Link>
             ))
            : 
            <Loader/>

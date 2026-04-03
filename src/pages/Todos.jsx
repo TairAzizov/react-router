@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Loader from '../components/Loader'
+import { Link } from 'react-router-dom'
 
 
 const Todos = () => {
@@ -27,10 +28,14 @@ const [todos, setTodos] = useState(null)
         <div className="container">
         <div className="box">
             {todos? todos.map((todo) => (
-                <div className="item" key={todo.id}>
+            <Link to={`/todos/${todo.id}`} className="item" key={todo.id}>
+             <div className="item" key={todo.id}>
                     <h2>{todo.id}</h2>
                     <h3>{todo.title}</h3>
                 </div>
+                
+                </Link>
+     
             ))
            : 
            <Loader/>
